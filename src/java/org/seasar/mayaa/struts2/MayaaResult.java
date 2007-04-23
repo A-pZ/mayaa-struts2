@@ -79,7 +79,7 @@ public class MayaaResult extends StrutsResultSupport {
 	}
 
 	/**
-	 * PathInfoを偽�?するHttpServletRequest
+	 * PathInfoを偽装するHttpServletRequest
 	 */
 	public static class MayaResultRequest extends HttpServletRequestWrapper {
 		private String location;

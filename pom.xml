@@ -4,7 +4,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.seasar.mayaa</groupId>
-	<artifactId>mayaa-struts2</artifactId>
+	<artifactId>struts2-mayaa-plugin</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<description></description>
 	<build>
@@ -54,8 +54,8 @@
 			<version>2.0.6</version>
 			<exclusions>
 				<exclusion>
-				<groupId>com.sun</groupId>
-				<artifactId>tools</artifactId>
+					<groupId>com.sun</groupId>
+					<artifactId>tools</artifactId>
 				</exclusion>
 			</exclusions>
 		</dependency>
@@ -86,9 +86,15 @@
 			<uniqueVersion>false</uniqueVersion>
 			<id>maven.seasar.org</id>
 			<name>The Seasar Foundation Maven2 Repository</name>
-			<url>
-				scp://www.seasar.org/home/groups/mayaa/maven/maven2/
-			</url>
+			<url>dav:https://www.seasar.org/maven/maven2</url>
 		</repository>
+		<snapshotRepository>
+			<uniqueVersion>true</uniqueVersion>
+			<id>maven.seasar.org</id>
+			<name>
+				The Seasar Foundation Maven2 Snapshot Repository
+			</name>
+			<url>dav:https://www.seasar.org/maven/maven2-snapshot</url>
+		</snapshotRepository>
 	</distributionManagement>
 </project>
