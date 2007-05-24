@@ -1,12 +1,19 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.seasar.mayaa</groupId>
 	<artifactId>struts2-mayaa-plugin</artifactId>
-	<version>1.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
+	<packaging>jar</packaging>
 	<description />
 	<scm>
-		<connection>scm:svn:https://www.seasar.org/svn/mayaa/trunk/struts2-mayaa-plugin/</connection>
-		<url>https://www.seasar.org/svn/mayaa/trunk/struts2-mayaa-plugin/</url>
+		<connection>
+			scm:svn:https://www.seasar.org/svn/mayaa/trunk/struts2-mayaa-plugin/
+		</connection>
+		<url>
+			https://www.seasar.org/svn/mayaa/trunk/struts2-mayaa-plugin/
+		</url>
 	</scm>
 	<build>
 		<defaultGoal>validate</defaultGoal>
@@ -34,6 +41,12 @@
 				</executions>
 			</plugin>
 		</plugins>
+		<extensions>
+			<extension>
+				<groupId>org.apache.maven.wagon</groupId>
+				<artifactId>wagon-webdav</artifactId>
+			</extension>
+		</extensions>
 	</build>
 	<repositories>
 		<repository>
@@ -63,7 +76,7 @@
 		<dependency>
 			<groupId>org.seasar.mayaa</groupId>
 			<artifactId>mayaa</artifactId>
-			<version>1.1.7</version>
+			<version>1.1.9</version>
 			<exclusions>
 				<exclusion>
 					<artifactId>avalon-framework</artifactId>
