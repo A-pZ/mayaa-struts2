@@ -2,11 +2,11 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.seasar.mayaa</groupId>
 	<artifactId>struts2-mayaa-plugin</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.1-SNAPSHOT</version>
 	<description />
 	<scm>
-		<connection>scm:svn:https://www.seasar.org/svn/mayaa/tags/release-1.0.0</connection>
-		<url>https://www.seasar.org/svn/mayaa/tags/release-1.0.0</url>
+		<connection>scm:svn:https://www.seasar.org/svn/mayaa/trunk/struts2-mayaa-plugin/</connection>
+		<url>https://www.seasar.org/svn/mayaa/trunk/struts2-mayaa-plugin/</url>
 	</scm>
 	<build>
 		<defaultGoal>validate</defaultGoal>
