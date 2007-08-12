@@ -35,33 +35,37 @@ public class MayaaResult extends StrutsResultSupport {
 	 */
 	protected void doExecute(String location, ActionInvocation actionInvocation)
 			throws Exception {
-		HttpServletRequest request = ServletActionContext.getRequest();
-		String path = request.getServletPath();
-		if (path.lastIndexOf('/') > 0) {
-			path = path.substring(1, path.lastIndexOf('/') + 1);
-		} else {
-			path = "";
-		}
+        HttpServletRequest request = ServletActionContext.getRequest();
+        String path = request.getServletPath();
+        if (path.lastIndexOf('/') > 0) {
+            path = path.substring(0, path.lastIndexOf('/') + 1);
+        } else {
+            path = "/";
+        }
 
-		if (location != null) {
-			if (location.startsWith("/")) {
-				// 絶対パス指定
-				request = new MayaResultRequest(request, location);
-			} else {
-				// 相対パス指定
-				request = new MayaResultRequest(request, path + location);
-			}
-		} else {
-			// location指定が無い場合「action名+".html"」
-			request = new MayaResultRequest(request, path
-					+ ActionContext.getContext().getName() + ".html");
-		}
+        if (location != null) {
+            if (location.startsWith("/")) {
+                // 絶対パス指定
+                request = new MayaResultRequest(request, location);
+            } else {
+                // 相対パス指定
+                request = new MayaResultRequest(request, path + location);
+            }
+        } else {
+            // location指定が無い場合は「action名+".html"」
+            request = new MayaResultRequest(request, path
+                    + ActionContext.getContext().getName() + ".html");
+        }
 
-		CycleUtil.initialize(request, ServletActionContext.getResponse());
-		Engine engine = ProviderUtil.getEngine();
-		setupCharacterEncoding(ServletActionContext.getRequest(), engine
-				.getParameter("requestCharacterEncoding"));
-		engine.doService(null, true);
+        CycleUtil.initialize(request, ServletActionContext.getResponse());
+        try {
+            Engine engine = ProviderUtil.getEngine();
+            setupCharacterEncoding(ServletActionContext.getRequest(), engine
+                    .getParameter("requestCharacterEncoding"));
+            engine.doService(null, true);
+        } finally {
+            CycleUtil.cycleFinalize();
+        }
 	}
 
 	protected void setupCharacterEncoding(HttpServletRequest request,
