@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequestWrapper;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.struts2.ServletActionContext;
-import org.apache.struts2.dispatcher.StrutsResultSupport;
+import org.apache.struts2.result.StrutsResultSupport;
 import org.seasar.mayaa.engine.Engine;
 import org.seasar.mayaa.impl.MayaaServlet;
 import org.seasar.mayaa.impl.cycle.CycleUtil;
@@ -27,7 +27,7 @@ public class MayaaResult extends StrutsResultSupport {
 
 	/**
 	 * 出力処理を行います。
-	 * 
+	 *
 	 * @param location
 	 *            出力に使用するファイルパス
 	 * @param actionInvocation

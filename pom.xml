@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.seasar.mayaa</groupId>
 	<artifactId>struts2-mayaa-plugin</artifactId>
-	<version>1.0.1</version>
+	<version>1.0.2-SNAPSHOT</version>
 	<packaging>jar</packaging>
 	<description />
 	<scm>
@@ -65,7 +65,7 @@
 		<dependency>
 			<groupId>org.apache.struts</groupId>
 			<artifactId>struts2-core</artifactId>
-			<version>2.0.9</version>
+			<version>2.5.25</version>
 			<exclusions>
 				<exclusion>
 					<groupId>com.sun</groupId>
@@ -76,7 +76,7 @@
 		<dependency>
 			<groupId>org.seasar.mayaa</groupId>
 			<artifactId>mayaa</artifactId>
-			<version>1.1.12</version>
+			<version>1.1.32</version>
 		</dependency>
 		<dependency>
 			<groupId>javax.servlet</groupId>
